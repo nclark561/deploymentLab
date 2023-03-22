@@ -1,0 +1,8 @@
+body {
+    display:flex;
+    flex-direction: column;
+    background-color: navy;
+    color:white;
+    font-family: 'Mynerve', cursive;
+    text-align: center;
+}
