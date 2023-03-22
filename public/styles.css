@@ -6,3 +6,9 @@ body {
     font-family: 'Mynerve', cursive;
     text-align: center;
 }
+input {
+    width:100px;
+}
+select {
+    width: 100px;
+}
