@@ -5,13 +5,19 @@ const rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+const cors = require('cors')
 
 rollbar.log('Rollbar running.')
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
+
+const { getNewPage } = require('./controller.js')
 
 app.use(express.static(`${__dirname}/public`))
+
+app.get('/char/:name', getNewPage)
 
 app.listen(5150, () => console.log('app is up on 5150'))
