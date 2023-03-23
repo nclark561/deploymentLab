@@ -1,4 +1,12 @@
 const express = require('express')
+const Rollbar = require('rollbar')
+const rollbar = new Rollbar({
+  accessToken: '05a66301f72840c8a0613560f80f7357',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+rollbar.log('Rollbar running.')
 
 const app = express()
 
