@@ -1,8 +1,16 @@
+const Rollbar = require('rollbar')
+const rollbar = new Rollbar({
+  accessToken: '05a66301f72840c8a0613560f80f7357',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
 module.exports = {
     getNewPage: (req, res) => {
         let newPage = '';
         switch(req.params.name) {
             case 'billy':
+                rollbar.info('billy')
                 newPage = `<header>
                 <h1>Billy the Adventurer</h1>
                 </header>
@@ -22,6 +30,7 @@ module.exports = {
                 </section>`;
                 break
             case 'jake':
+                rollbar.info('jake')
                 newPage = `<header>
                 <h1>Jake the Dog</h1>
                 </header>
@@ -41,6 +50,7 @@ module.exports = {
                 </section>`;
                 break
             case 'finn':
+                rollbar.info('finn')
                 newPage = `<header>
                 <h1>Finn the Human</h1>
                 </header>
@@ -64,6 +74,7 @@ module.exports = {
                 </section>`;
                 break
             case 'bmo':
+                rollbar.info('bmo')
                 newPage = `<header>
                 <h1>BMO</h1>
                 </header>
