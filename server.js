@@ -14,6 +14,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res) => res.sendFile(`${__dirname}/controller.js`))
+
 const { getNewPage } = require('./controller.js')
 
 app.use(express.static(`${__dirname}/public`))
